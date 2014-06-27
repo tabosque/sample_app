@@ -44,11 +44,7 @@ GEM
     coffee-script-source (1.7.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-<<<<<<< HEAD
-    execjs (2.2.0)
-=======
     execjs (2.2.1)
->>>>>>> b0feb5bcf4039af1ea19a7113f510fd3cb136d85
     ffi (1.9.3)
     hike (1.2.3)
     i18n (0.6.9)
