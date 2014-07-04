@@ -123,7 +123,7 @@ describe User do
     its(:remember_token) { should_not be_blank }
   end
 
-  describe "micpopost associations" do
+  describe "micropost associations" do
 
     before { @user.save }
     let!(:older_micropost) do
@@ -144,6 +144,16 @@ describe User do
       microposts.each do |micropost|
         expect(Micropost.where(id: micropost.id)).to be_empty
       end
+    end
+
+    describe "status" do
+      let(:unfollowed_post) do
+        FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
+      end
+
+      its(:feed) { should include(newer_micropost) }
+      its(:feed) { should include(older_micropost) }
+      its(:feed) { should_not include(unfollowed_post) }
     end
   end
 end
